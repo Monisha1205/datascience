@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 class Univariate():
     
     
@@ -10,6 +13,7 @@ class Univariate():
             else:
                 quan.append(columnName)
         return qual,quan
+    
     
     
     def Univariate(dataset,quan):
@@ -32,6 +36,8 @@ class Univariate():
             descriptive[columnName]["upper whister"]=descriptive[columnName]["Q3:75th"]+(1.5*descriptive[columnName]["IQR"])
             descriptive[columnName]["skewness"]=dataset[columnName].skew()
             descriptive[columnName]["kurtosis"]=dataset[columnName].kurtosis()
+            descriptive[columnName]["var"]=dataset[columnName].var()
+            descriptive[columnName]["std"]=dataset[columnName].std()
         return descriptive
 
 
